@@ -1,0 +1,397 @@
+@font-face {
+  font-family: "Manrope";
+  src: url('./../fonts/Manrope-Regular.otf') format('OpenType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url('./../fonts/Manrope-Bold.otf') format('OpenType');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url('./../fonts/Manrope-Light.otf') format('OpenType');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url('./../fonts/NotoSans-Italic.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url('./../fonts/NotoSans-Regular.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url('./../fonts/NotoSans-Bold.ttf') format('TrueType');
+  font-weight: bold;
+  font-style: normal;
+}
+
+*, *::after, *::before {
+  color: inherit;
+  font-family: inherit;
+  box-sizing: inherit;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+:root {
+  --clr-nav: #1F2235;
+  --clr-primary: #24263B;
+  --clr-primary-100: #282A40;
+  --clr-accent: #BC5176;
+  --clr-accent-100: #984461;
+  --clr-title: #F7F7F7;
+  --clr-caption: #DFDFDF;
+  --clr-nav-active: #FFFFFF;
+  --clr-nav-inactive: #C7C7C7;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--clr-title);
+  overflow-x: hidden;
+}
+
+#logo {
+  width: 4rem;
+  height: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--clr-nav);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  font-family: "NotoSans";
+  font-weight: lighter;
+}
+
+.header-nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header-nav-item {
+  color: var(--clr-nav-inactive);
+  text-decoration: none;
+}
+
+.header-nav-item.active {
+  color: var(--clr-nav-active);
+}
+
+.header-nav-item a {
+  letter-spacing: 1px;
+}
+
+.header-nav-item:not(:nth-last-child(1)) {
+  margin: 0 1rem 0 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--clr-accent);
+}
+
+.btn-primary:hover {
+  background: var(--clr-accent-100);
+}
+
+.btn-primary-outline {
+  box-shadow: inset 0 0 0 2px var(--clr-accent);
+}
+
+.btn-primary-outline:hover {
+  background: var(--clr-accent);
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 4rem 0;
+}
+
+.title::before, .title::after {
+  content: '';
+  position: absolute;
+  bottom: -2rem;
+  height: .5rem;
+  background: var(--clr-accent);
+}
+
+.title::before {
+  left: 0;
+  width: calc(100% - (.5rem * 2));
+  border-radius: 50rem;
+}
+
+.title::after {
+  right: 0;
+  width: .5rem;
+  border-radius: 50%;
+}
+
+.caption {
+  font-size: 1.25rem;
+  font-weight: lighter;
+  color: var(--clr-caption);
+  margin: 0 0 4rem 0;
+}
+
+main {
+  height: 100%;
+}
+
+section {
+  position: relative;
+  padding: 8rem 0;
+  height: 100%;
+}
+
+section:nth-child(odd) {
+  background: var(--clr-primary);
+}
+
+section:nth-child(even) {
+  background: var(--clr-primary-100);
+}
+
+#home {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-media-link {
+  font-size: 1.5rem;
+  margin: 0 2rem 3rem 0;
+}
+
+.social-media-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--clr-accent);
+  transition: background 0.3s ease;
+}
+
+.social-media-link a:hover {
+  background: var(--clr-accent);
+}
+
+.home-content-intro {
+  width: 500px;
+}
+
+.home-content-intro h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.home-content-intro blockquote {
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  color: var(--clr-caption);
+  margin: 0 0 3rem 0;
+}
+
+.home-content-buttons {
+  display: flex;
+}
+
+.home-content-buttons a:nth-child(1) {
+  margin: 0 2rem 0 0;
+}
+
+#home_decor {
+  position: absolute;
+  top: -10%;
+  right: -25%;  
+  width: auto;
+  height: 120%;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+#services {
+  height: unset;
+}
+
+.service-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-item h3 {
+  letter-spacing: 1px;
+}
+
+.service {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service li {
+  position: relative;
+  font-weight: lighter;
+  color: var(--clr-caption);
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 2rem;
+  line-height: 1;
+}
+
+.service li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: var(--clr-accent);
+  border-radius: 50%;
+}
+
+#services_decor {
+  position: absolute;
+  bottom: 5%;
+  left: -2%;
+  width: auto;
+  height: 75%;
+  pointer-events: none;
+}
+
+#about-me {
+  height: unset;
+}
+
+#about-me .container {
+  margin-bottom: 8rem;
+}
+
+#about-me p {
+  width: 60%;
+  font-size: 1.25rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+
+#about_me_decor_dots {
+  width: auto;
+  height: 8rem;
+  margin: -2rem 0 6rem 5rem;  
+}
+
+#about_me_decor_quotes {
+  position: absolute;
+  bottom: 7%;
+  right: -7%;
+  pointer-events: none;
+}
+
+/* S Viewports */
+@media screen and (min-width: 576px) {
+
+}
+
+/* M Viewports */
+@media screen and (min-width: 768px) {
+
+}
+
+/* L Viewports */
+@media screen and (min-width: 992px) {
+
+}
+
+/* XL Viewports */
+@media screan and (min-width: 1200px) {
+
+}
+
+/* XXL Viewports */
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 92%;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1320px;
+  }
+}
